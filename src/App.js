@@ -1,24 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import { Canvas } from '@react-three/fiber';
+import { Sky } from '@react-three/drei';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="canvas-container">
+        <Canvas>
+          <Sky 
+          sunPosition={[5, 1, 8]}
+          distance={4500000}
+          inclination={0}
+          azimuth={0.25}
+        />
+        </Canvas>
+      </div>
+    </>
   );
 }
 
