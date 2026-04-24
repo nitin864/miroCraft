@@ -2,13 +2,14 @@ import { useSphere } from "@react-three/cannon"
 import { useFrame, useThree } from "@react-three/fiber"
 import { useEffect, useRef } from "react"
 import { Vector2, Vector3 } from "three"
-import { usekeyboard } from "../hooks/useKeyboard"
+import { useKeyboard } from "../hooks/useKeyboard"
+ 
 
 export const Player = () => {
    
-    const actions  = usekeyboard()
-
-
+    const actions  =  useKeyboard()
+    console.log('actions', Object.entries(actions).filter(([k,v]) => v))
+  
     const { camera } = useThree()
     useEffect(() => {
         camera.lookAt(0, 0, 0)
