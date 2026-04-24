@@ -4,12 +4,16 @@ import { Canvas } from '@react-three/fiber';
 import { PointerLockControls, Sky } from '@react-three/drei';
 import { Physics } from '@react-three/cannon';
 import { Ground } from './components/Ground';
+import { Player } from './components/Player';
+ 
 
 function App() {
   return (
     <>
       <div className="canvas-container">
-        <Canvas camera={{ position: [0, 10, 20], fov: 60 }}>
+        <Canvas camera={{ position: [1,1,1], fov: 60 }}>
+          
+          <PointerLockControls/>
           <Sky 
           sunPosition={[5, 1, 8]}
           distance={4500000}
@@ -21,6 +25,7 @@ function App() {
         <Physics >
           
           <Ground/>
+          <Player/>
         </Physics>
         </Canvas>
       </div>
