@@ -1,7 +1,7 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { Canvas } from '@react-three/fiber';
-import { Sky } from '@react-three/drei';
+import { PointerLockControls, Sky } from '@react-three/drei';
 import { Physics } from '@react-three/cannon';
 import { Ground } from './components/Ground';
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <div className="canvas-container">
-        <Canvas>
+        <Canvas camera={{ position: [0, 10, 20], fov: 60 }}>
           <Sky 
           sunPosition={[5, 1, 8]}
           distance={4500000}
@@ -19,6 +19,7 @@ function App() {
         <ambientLight intensity={0.5}/>
         <directionalLight position={[5, 5, 5]} />
         <Physics >
+          
           <Ground/>
         </Physics>
         </Canvas>
