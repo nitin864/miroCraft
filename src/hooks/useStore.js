@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 import { texture } from 'three/tsl';
-import create from 'zustand';
+import {create} from 'zustand';
 
 export const useStore = create((set) => ({
      texture: 'dirt',
