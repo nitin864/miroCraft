@@ -8,7 +8,7 @@ export const Cube = ({ position, texture }) => {
 
   return (
     <mesh ref={ref}>
-      <boxBufferGeometry attach='geometry' />
+      <boxGeometry attach='geometry' />
       <meshStandardMaterial color='hotpink' attach='material' />
     </mesh>
   )
