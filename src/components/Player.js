@@ -1,7 +1,7 @@
 import { useSphere } from "@react-three/cannon"
 import { useFrame, useThree } from "@react-three/fiber"
 import { useEffect, useRef } from "react"
-import { Vector2, Vector3 } from "three"
+import { Vector3 } from "three"
 import { useKeyboard } from "../hooks/useKeyboard"
 
 const jump_force = 5
@@ -15,7 +15,7 @@ export const Player = () => {
     const { camera } = useThree()
     useEffect(() => {
         camera.lookAt(0, 0, 0)
-    }, [])
+    }, [camera])
 
     const [ref, api] = useSphere(() => ({
         mass: 1,
