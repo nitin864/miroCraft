@@ -46,7 +46,7 @@ A Minecraft-inspired 3D browser game built with React, Three.js, and React Three
 
 ---
 
-## 🚀 Getting Started
+##Getting Started
 
 ### Prerequisites
 - Node.js >= 16
@@ -101,7 +101,7 @@ src/
 
 ---
 
-## 🛠️ Tech Stack
+##Tech Stack
 
 | Library | Version | Purpose |
 |---------|---------|---------|
@@ -115,7 +115,7 @@ src/
 
 ---
 
-## ⚙️ How It Works
+##How It Works
 
 ### Placing Blocks
 Each cube has 6 faces. When you click a face, `faceIndex` tells which face was clicked. A new cube is placed adjacent to that face:
@@ -147,7 +147,7 @@ Clicking **Save** writes all cubes to `localStorage`. On next page load, the wor
 
 ---
 
-## 📦 Available Scripts
+##Available Scripts
 
 ```bash
 npm start       # Run dev server at localhost:3000
@@ -157,7 +157,7 @@ npm test        # Run tests
 
 ---
 
-## 🐛 Known Issues / Debug Tips
+##Known Issues / Debug Tips
 
 - If blocks are not placing correctly, make sure `e.stopPropagation()` is present in click handlers to prevent event bubbling.
 - Mouse pointer must be locked (click the screen) before controls work.
@@ -165,6 +165,6 @@ npm test        # Run tests
 
 ---
 
-## 🙌 Credits
+##Credits
 
-Built with ❤️ using React Three Fiber ecosystem. 
+Built with ❤️ using React Three Fiber ecosystem by Nitin. 
