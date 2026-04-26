@@ -36,6 +36,17 @@ function App() {
          <div className='absolute centered cursor'>+</div>
       <TextureSelector />
       <Menu />
+      <div style={{
+        position: 'fixed',
+        bottom: '20px',
+        right: '20px',
+        color: 'white',
+        fontSize: '14px',
+        fontFamily: 'monospace',
+        opacity: 0.7
+      }}>
+        Made by Nitin
+      </div>
       </div>
     </>
   );
