@@ -20,6 +20,11 @@ groundTexture.wrapT = RepeatWrapping
 groundTexture.repeat.set(100, 100)
 groundTexture.magFilter = NearestFilter
 
+dirtTexture.magFilter = NearestFilter
+glassTexture.magFilter = NearestFilter
+grassTexture.magFilter = NearestFilter
+logTexture.magFilter = NearestFilter
+woodTexture.magFilter = NearestFilter
 
 export {
     dirtTexture,
