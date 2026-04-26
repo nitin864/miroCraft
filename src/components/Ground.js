@@ -1,5 +1,6 @@
 import { usePlane } from "@react-three/cannon"
 import { groundTexture } from "../images/textures"
+import { useStore } from "../hooks/useStore"
 
 export const Ground = () => {
   const [ref] = usePlane(() => ({
@@ -7,8 +8,16 @@ export const Ground = () => {
     position: [0, 0, 0]
   }))
 
+  const addCube = useStore((state) => state.addCube)
+
   return (
-    <mesh ref={ref}>
+    <mesh 
+    onClick={(e) => {
+      e.stopPropagation()
+      const [x, y, z] = Object.values(e.point).map(val => Math.ceil(val));
+				addCube(x, y, z)
+    }}
+    ref={ref}>
       <planeGeometry args={[100, 100]} />
       <meshStandardMaterial map={groundTexture} />
     </mesh>
