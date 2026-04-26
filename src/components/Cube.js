@@ -1,5 +1,6 @@
 import { useBox } from "@react-three/cannon"
 import * as textures from "../images/textures"
+import { useStore } from "../hooks/useStore"
 
 export const Cube = ({ position, texture }) => {
   const [ref] = useBox(() => ({
@@ -8,10 +9,37 @@ export const Cube = ({ position, texture }) => {
   }))
 
   const activeTexture = textures[texture + 'Texture'] 
-  console.log('activeTexture: ', activeTexture)
+  const removeCube = useStore((state) => state.removeCube)
+  const addCube = useStore((state) => state.addCube)
+
 
   return (
-    <mesh ref={ref}>
+    <mesh 
+    onClick={(e) => {
+      e.stopPropagation()
+      const clickedFace = Math.floor(e.faceIndex/2)
+      const {x,y,z} = ref.current.position;
+      if(clickedFace === 0){
+        addCube(x +1,y,z)
+      }
+      else if(clickedFace === 1){
+        addCube(x -1,y,z)
+      }
+      else if(clickedFace === 2){
+        addCube(x,y +1,z)
+      }
+      else if(clickedFace === 3){
+        addCube(x,y -1,z)
+      }
+      else if(clickedFace === 4){
+        addCube(x,y,z+1)
+      }
+      else if(clickedFace === 5){
+        addCube(x,y,z-1)
+      }
+
+    }}
+    ref={ref}>
       <boxGeometry attach='geometry' />
       <meshStandardMaterial map={activeTexture}   attach='material' />
     </mesh>
