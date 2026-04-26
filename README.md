@@ -1,5 +1,7 @@
 # 🧱 microCraft
 
+live: https://mirocraft.vercel.app/
+
 A Minecraft-inspired 3D browser game built with React, Three.js, and React Three Fiber. Walk around a 3D world, place and remove blocks, switch textures, and save your world — all in the browser.
 
 ---
